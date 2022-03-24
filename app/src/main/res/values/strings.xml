@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Stream Draw</string>
+
+    <string name="create_group">Create Group</string>
+    <string name="join_group">Join Group</string>
+
+    <string name="display_name">Display Name</string>
+    <string name="limit_user">Limit User</string>
+    <string name="limit_time">Limit Time</string>
+    <string name="no_of_rounds">No of Rounds</string>
+    <string name="group_code">Group Code</string>
+    <string name="continue_to_game">Continue to Game</string>
+    <string name="group_entrance">Check out the ticket!</string>
+    <string name="group_created_desc">Your friends can join using this code</string>
+    <string name="group_created_failed">Something went wrong. 😢</string>
+    <string name="select_a_word">Select a word</string>
+    <string name="invite_people" tools:ignore="ExtraTranslation">Click here to share it with your friends</string>
+    <string name="submit">Submit</string>
+    <string name="exit_game_title">Do you want to exit the game?</string>
+    <string name="exit_game_confirm">Exit</string>
+    <string name="fill_all_blanks">please fill all required fields</string>
+    <string name="game_deleted">Group has been deleted 😢</string>
+    <string name="exit_game">Exit Game</string>
+    <string name="group_chat">Group Chat</string>
+    <string name="game_winner">Congratulations, \nYou win! 🎉🎉</string>
+    <string name="game_restart">Restart</string>
+
+    <string name="stream_api_key">7uyq8e43evdp</string>
+</resources>

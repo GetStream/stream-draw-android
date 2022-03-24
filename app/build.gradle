@@ -1,0 +1,97 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
+}
+
+apply from: "$rootDir/dependencies.gradle"
+
+android {
+    compileSdk versions.compileSdk
+    defaultConfig {
+        applicationId "io.getstream.streamdraw"
+        minSdk versions.minSdk
+        targetSdk versions.compileSdk
+        versionCode versions.versionCode
+        versionName versions.versionName
+        vectorDrawables.useSupportLibrary = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion versions.compose
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+        kotlinOptions.freeCompilerArgs += ["-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"]
+        kotlinOptions.freeCompilerArgs += ["-Xopt-in=androidx.compose.ui.ExperimentalComposeUiApi"]
+        kotlinOptions.freeCompilerArgs += ["-Xopt-in=androidx.compose.material.ExperimentalMaterialApi"]
+    }
+}
+
+dependencies {
+    // androidx
+    implementation "com.google.android.material:material:$versions.material"
+    implementation "androidx.activity:activity-ktx:$versions.activity"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
+
+    // jetpack compose
+    implementation "androidx.compose.ui:ui:$versions.compose"
+    implementation "androidx.compose.material:material:$versions.compose"
+    implementation "androidx.compose.ui:ui-tooling-preview:$versions.compose"
+    implementation "androidx.activity:activity-compose:$versions.activity"
+    implementation "androidx.navigation:navigation-compose:$versions.composeNavigation"
+    implementation "androidx.constraintlayout:constraintlayout-compose:$versions.constraintLayout"
+    debugImplementation "androidx.compose.ui:ui-tooling:$versions.compose"
+
+    // sketchbook
+    implementation "io.getstream:sketchbook:$versions.sketchbook"
+
+    // Stream Chat Compose SDK
+    implementation "io.getstream:stream-chat-android-compose:$versions.streamChatSDK"
+
+    // network
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-moshi:$versions.retrofitVersion"
+
+    // image loading
+    implementation "com.github.skydoves:landscapist-glide:$versions.landscapist"
+
+    // moshi
+    implementation "com.squareup.moshi:moshi:$versions.moshiVersion"
+    implementation "com.squareup.moshi:moshi-kotlin:$versions.moshiVersion"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$versions.moshiVersion"
+
+    // hilt
+    implementation "com.google.dagger:hilt-android:$versions.hilt"
+    implementation "androidx.hilt:hilt-navigation-compose:$versions.hiltComposeNavigation"
+    kapt "com.google.dagger:hilt-compiler:$versions.hilt"
+
+    // startup
+    implementation "androidx.startup:startup-runtime:$versions.startupVersion"
+
+    // konfetti
+    implementation "nl.dionsegijn:konfetti-compose:$versions.konfetti"
+
+    // logging
+    implementation "com.jakewharton.timber:timber:$versions.timberVersion"
+
+    // firebase
+    implementation "com.google.firebase:firebase-database:$versions.firebase"
+}
+
+apply from: "$rootDir/spotless.gradle"
