@@ -3,7 +3,6 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
-    id 'com.google.gms.google-services'
 }
 
 apply from: "$rootDir/dependencies.gradle"
@@ -95,3 +94,7 @@ dependencies {
 }
 
 apply from: "$rootDir/spotless.gradle"
+
+if (file("google-services.json").exists()) {
+    apply plugin: "com.google.gms.google-services"
+}
