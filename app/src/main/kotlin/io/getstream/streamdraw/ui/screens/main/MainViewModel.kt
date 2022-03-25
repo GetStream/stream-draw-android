@@ -90,7 +90,7 @@ class MainViewModel @Inject constructor(
         return chatClient.createChannel(
             channelType = CHANNEL_MESSAGING,
             channelId = groupId,
-            members = listOf(userId),
+            memberIds = listOf(userId),
             extraData = mapOf(
                 KEY_NAME to displayName.groupName,
                 KEY_HOST_NAME to displayName,
@@ -123,7 +123,7 @@ class MainViewModel @Inject constructor(
             if (connection.isSuccess) {
                 _gameConnectionState.emit(GameConnectionState.Loading)
                 val channelClient = chatClient.channel(groupId.toChannelId())
-                val result = channelClient.addMembers(userId).await()
+                val result = channelClient.addMembers(listOf(userId)).await()
                 if (result.isSuccess) {
                     _gameConnectionState.emit(GameConnectionState.Success(result.data()))
                 } else {

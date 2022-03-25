@@ -20,7 +20,9 @@ import android.content.Context
 import androidx.startup.Initializer
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.logger.ChatLogLevel
-import io.getstream.chat.android.livedata.ChatDomain
+import io.getstream.chat.android.offline.model.message.attachments.UploadAttachmentsNetworkType
+import io.getstream.chat.android.offline.plugin.configuration.Config
+import io.getstream.chat.android.offline.plugin.factory.StreamOfflinePluginFactory
 import io.getstream.streamdraw.BuildConfig
 import io.getstream.streamdraw.R
 import timber.log.Timber
@@ -39,18 +41,18 @@ class StreamChatInitializer : Initializer<Unit> {
          * e.g, connect/disconnect user to the server, send/update/pin message, etc.
          */
         val logLevel = if (BuildConfig.DEBUG) ChatLogLevel.ALL else ChatLogLevel.NOTHING
-        val chatClient: ChatClient =
-            ChatClient.Builder(context.getString(R.string.stream_api_key), context)
-                .logLevel(logLevel)
-                .build()
-
-        /**
-         * initialize a global instance of the [ChatDomain].
-         * The ChatDomain is the main entry point for all livedata & offline operations on chat.
-         * e.g, querying available channel lists, querying users, etc.
-         */
-        ChatDomain.Builder(chatClient, context)
-            .offlineEnabled()
+        val offlinePluginFactory = StreamOfflinePluginFactory(
+            config = Config(
+                backgroundSyncEnabled = true,
+                userPresence = true,
+                persistenceEnabled = true,
+                uploadAttachmentsNetworkType = UploadAttachmentsNetworkType.NOT_ROAMING,
+            ),
+            appContext = context,
+        )
+        ChatClient.Builder(context.getString(R.string.stream_api_key), context)
+            .withPlugin(offlinePluginFactory)
+            .logLevel(logLevel)
             .build()
     }
 
