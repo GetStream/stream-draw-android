@@ -28,7 +28,7 @@ ext.versions = [
         streamChatSDK        : '5.0.1',
 
         // sketchbook
-        sketchbook           : '1.0.3-20220310.123111-3',
+        sketchbook           : '1.0.3',
 
         // konfetti
         konfetti             : '2.0.2',
