@@ -18,10 +18,8 @@ package io.getstream.streamdraw.utils
 
 const val CHANNEL_MESSAGING = "messaging"
 
+const val KEY_NAME = "name"
 const val KEY_HOST_NAME = "host_name"
 const val KEY_SELECTED_WORD = "selected_word"
 const val KEY_GAME_STATUS = "game_status"
 const val KEY_WINNER = "game_winner"
-
-const val KEY_NAME = "name"
-const val KEY_IMAGE = "image"

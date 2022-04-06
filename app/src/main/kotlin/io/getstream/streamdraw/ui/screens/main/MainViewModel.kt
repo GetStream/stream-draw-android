@@ -34,7 +34,6 @@ import io.getstream.streamdraw.ui.screens.game.GameStatus
 import io.getstream.streamdraw.utils.CHANNEL_MESSAGING
 import io.getstream.streamdraw.utils.KEY_GAME_STATUS
 import io.getstream.streamdraw.utils.KEY_HOST_NAME
-import io.getstream.streamdraw.utils.KEY_IMAGE
 import io.getstream.streamdraw.utils.KEY_NAME
 import io.getstream.streamdraw.utils.generateGroupId
 import io.getstream.streamdraw.utils.generateUserId
@@ -71,10 +70,8 @@ class MainViewModel @Inject constructor(
         }
         val user = User(
             id = userId,
-            extraData = mutableMapOf(
-                KEY_NAME to displayName,
-                KEY_IMAGE to displayName.image
-            )
+            name = displayName,
+            image = displayName.image
         )
         val token = chatClient.devToken(userId)
         return chatClient
