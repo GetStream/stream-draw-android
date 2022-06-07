@@ -19,9 +19,9 @@ package io.getstream.streamdraw.ui.screens.game
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,7 +32,7 @@ import io.getstream.sketchbook.rememberSketchbookController
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class GameActivity : AppCompatActivity() {
+class GameActivity : ComponentActivity() {
 
     @set:Inject
     internal lateinit var gameViewModelFactory: GameViewModel.GameAssistedFactory

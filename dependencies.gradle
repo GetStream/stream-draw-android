@@ -37,7 +37,7 @@ ext.versions = [
         startupVersion       : '1.1.1',
 
         // di
-        hilt                 : '2.40.5',
+        hilt                 : '2.42',
 
         // network
         retrofitVersion      : '2.9.0',

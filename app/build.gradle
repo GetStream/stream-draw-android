@@ -44,7 +44,6 @@ android {
 
 dependencies {
     // androidx
-    implementation "com.google.android.material:material:$versions.material"
     implementation "androidx.activity:activity-ktx:$versions.activity"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
 
