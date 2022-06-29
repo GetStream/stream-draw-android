@@ -171,9 +171,10 @@ private fun ChatInput(
 ) {
     val onInputValue = remember { mutableStateOf("") }
     InputField(
-        modifier = modifier,
         value = onInputValue.value,
+        modifier = modifier,
         maxLines = 1,
+        innerPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
         onValueChange = { onInputValue.value = it },
         decorationBox = { innerTextField ->
             Row(

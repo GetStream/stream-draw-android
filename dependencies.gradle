@@ -11,7 +11,7 @@ ext.versions = [
         ktlint               : '0.40.0',
 
         // kotlin
-        kotlin               : '1.6.10',
+        kotlin               : '1.7.0',
 
         // androidx
         material             : '1.5.0',
@@ -19,16 +19,17 @@ ext.versions = [
         lifecycle            : '2.4.1',
 
         // compose
-        compose              : '1.1.1',
+        compose              : '1.2.0-rc03',
+        composeCompiler      : '1.2.0',
         composeNavigation    : '2.4.1',
         constraintLayout     : '1.0.0',
         hiltComposeNavigation: '1.0.0',
 
         // stream chat SDK
-        streamChatSDK        : '5.3.1',
+        streamChatSDK        : '5.4.0',
 
         // sketchbook
-        sketchbook           : '1.0.3',
+        sketchbook           : '1.0.4',
 
         // konfetti
         konfetti             : '2.0.2',
