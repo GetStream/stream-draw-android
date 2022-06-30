@@ -35,6 +35,9 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+    lintOptions {
+        abortOnError false
+    }
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
         kotlinOptions.freeCompilerArgs += ["-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"]
         kotlinOptions.freeCompilerArgs += ["-Xopt-in=androidx.compose.ui.ExperimentalComposeUiApi"]
