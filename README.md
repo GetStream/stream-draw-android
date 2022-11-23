@@ -33,6 +33,9 @@ Go to the [Releases](https://github.com/GetStream/stream-draw-android/releases) 
 Stream Draw was built with __[Android Chat SDK for Messaging](https://getstream.io/chat/sdk/android/?utm_source=Github&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=Github_Mar2022_AndroidSDK&utm_term=DevRelOss)__ to implement messaging systems.
 If you’re interested in adding powerful In-App Messaging to your app, check out the __[Android Chat Messaging Tutorial](https://getstream.io/tutorials/android-chat/?utm_source=Github&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=Github_Mar2022_AndroidSDK&utm_term=DevRelOss)__!
 
+- [Stream Chat SDK for Android on GitHub](https://github.com/getStream/stream-chat-android)
+- [Android Samples for Stream Chat SDK on GitHub](https://github.com/getStream/android-samples)
+- [Stream Chat Compose UI Componenets Guidelines](https://getstream.io/chat/docs/sdk/android/compose/overview/)
 
 ## 🛠 Tech Sacks & Open Source Libraries
 - Minimum SDK level 21.
