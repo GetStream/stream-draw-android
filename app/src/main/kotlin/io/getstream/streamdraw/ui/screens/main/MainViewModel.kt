@@ -20,7 +20,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.getstream.chat.android.client.ChatClient
-import io.getstream.chat.android.client.call.await
 import io.getstream.chat.android.client.models.Channel
 import io.getstream.chat.android.client.models.ConnectionData
 import io.getstream.chat.android.client.models.User
@@ -66,7 +65,7 @@ class MainViewModel @Inject constructor(
     private suspend fun connectUser(displayName: String): Result<ConnectionData> {
         val currentUser = chatClient.getCurrentUser()
         if (currentUser != null) {
-            chatClient.disconnect()
+            chatClient.disconnect(true)
         }
         val user = User(
             id = userId,

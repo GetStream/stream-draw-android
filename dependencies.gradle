@@ -25,7 +25,7 @@ ext.versions = [
         hiltComposeNavigation: '1.0.0',
 
         // stream chat SDK
-        streamChatSDK        : '5.4.0',
+        streamChatSDK        : '5.17.0',
 
         // sketchbook
         sketchbook           : '1.0.4',
