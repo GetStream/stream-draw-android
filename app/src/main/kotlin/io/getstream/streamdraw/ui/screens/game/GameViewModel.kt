@@ -31,7 +31,6 @@ import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import io.getstream.chat.android.client.ChatClient
-import io.getstream.chat.android.client.call.await
 import io.getstream.chat.android.client.channel.subscribeFor
 import io.getstream.chat.android.client.events.ChannelDeletedEvent
 import io.getstream.chat.android.client.events.ChannelUpdatedByUserEvent
@@ -338,7 +337,7 @@ class GameViewModel @AssistedInject constructor(
         }
 
         // disconnect user.
-        chatClient.disconnect()
+        chatClient.disconnect(true)
 
         // dispose all subscribers.
         disposables.forEach { it.dispose() }
@@ -360,7 +359,7 @@ class GameViewModel @AssistedInject constructor(
             cid: String
         ): ViewModelProvider.Factory = object : ViewModelProvider.Factory {
             @Suppress("UNCHECKED_CAST")
-            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            override fun <T : ViewModel> create(modelClass: Class<T>): T {
                 return assistedFactory.create(cid) as T
             }
         }
